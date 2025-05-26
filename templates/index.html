@@ -1,0 +1,11 @@
+<h1>📚 Danh sách sách</h1>
+<a href="/add">+ Thêm sách mới</a>
+<ul>
+  {% for book in books %}
+    <li>
+      <b>{{ book.title }}</b> - {{ book.author }}
+      [<a href="/toggle/{{ loop.index0 }}">Đã đọc: {{ '✅' if book.read else '❌' }}</a>]
+      [<a href="/delete/{{ loop.index0 }}">Xóa</a>]
+    </li>
+  {% endfor %}
+</ul>
